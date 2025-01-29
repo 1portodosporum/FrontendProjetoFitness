@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import UsuarioServices from '../../services/UsuarioServices';
 import { ChangeEvent, useState } from 'react';
 
@@ -6,7 +6,7 @@ function Cadastro() {
 
   const usuarioServices = new UsuarioServices();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -25,7 +25,7 @@ function Cadastro() {
   //     }
   // }, [usuario]);
 
-  // const retornar = () => navigate('/login');
+  const retornar = () => navigate('/login');
 
   const atualizarEstado = (evento: ChangeEvent<HTMLInputElement>) => {
     setUsuario({
@@ -47,6 +47,7 @@ function Cadastro() {
       try {
         await usuarioServices.cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
+        retornar()
       } catch (error) {
         alert('Erro ao cadastrar usuário!',)
       }
