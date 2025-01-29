@@ -19,7 +19,7 @@ export default function Footer() {
                 <ul className="space-y-3">
                   <li>
                     <a href="#" className="text-gray-400 hover:text-gray-800">
-                      Sobre nós
+                      <Link to="/listaralunos">Sobre nós</Link>
                     </a>
                   </li>
                 </ul>
@@ -29,7 +29,7 @@ export default function Footer() {
                 <ul>
                   <li>
                     <a href="#" className="text-gray-400 hover:text-gray-800">
-                      Contato
+                      <Link to="/listartreinos">Contato</Link>
                     </a>
                   </li>
                 </ul>
