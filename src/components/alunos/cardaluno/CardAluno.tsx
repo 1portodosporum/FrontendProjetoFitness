@@ -7,7 +7,7 @@ interface CardAlunoProps {
 
 export const CardAluno = ({ aluno }: CardAlunoProps) => {
   return (
-    <div className="h-screen flex justify-center items-center bg-gray-100">
+    // <div className="h-screen flex justify-center items-center bg-gray-100">
       <div className="max-w-xs w-full bg-white shadow-md rounded-lg overflow-hidden p-5 flex flex-col items-center space-y-4 border border-gray-200">
         <img
           className="w-24 h-24 rounded-full border-4 border-red-950 object-cover"
@@ -44,6 +44,6 @@ export const CardAluno = ({ aluno }: CardAlunoProps) => {
           Ver Detalhes
         </button>
       </div>
-    </div>
+    // </div>
   );
 };

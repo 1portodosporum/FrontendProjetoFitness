@@ -1,6 +1,37 @@
-import { Link } from 'react-router';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
+import UsuarioLogin from '../../models/UsuarioLogin';
+import { AuthContext } from '../../contexts/AuthContext';
+import { RotatingLines } from 'react-loader-spinner';
 
 function Login() {
+
+  const navigate = useNavigate();
+  const { usuario, handleLogin, isLoading } = useContext(AuthContext);
+
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+    {} as UsuarioLogin
+  )
+
+  useEffect(() => {
+    if (usuario.token) {
+      navigate('/home')
+    }
+  }, [usuario])
+
+  const atualizarEstado = (event: ChangeEvent<HTMLInputElement>) => {
+    setUsuarioLogin({
+      ...usuarioLogin,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const login = (event: ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    handleLogin(usuarioLogin)
+  }
+
+
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-gray-950 to-red-950 flex items-center justify-center p-4">
@@ -11,7 +42,7 @@ function Login() {
             <p className="text-gray-600 mt-2">Faça login para continuar</p>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={login}>
             <div className="space-y-2">
               <label htmlFor="usuario" className="text-sm font-medium text-gray-700 block">
                 Email
@@ -23,6 +54,8 @@ function Login() {
                   name="usuario"
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                   placeholder="seu@email.com"
+                  value={usuarioLogin.usuario}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                   required
                 />
               </div>
@@ -36,8 +69,11 @@ function Login() {
                 <input
                   id="senha"
                   type="password"
+                  name="senha"
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                   placeholder="••••••••"
+                  value={usuarioLogin.senha}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                   required
                 />
               </div>
@@ -46,7 +82,15 @@ function Login() {
             <button
               type="submit"
               className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-red-900 focus:ring-4 focus:ring-red-950 font-medium transition-colors">
-              Entrar
+              {isLoading ? <RotatingLines
+                            strokeColor="white"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="24"
+                            visible={true}
+                        /> :
+                            <span>Entrar</span>
+                        }
             </button>
           </form>
 

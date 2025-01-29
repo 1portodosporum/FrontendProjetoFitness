@@ -7,7 +7,7 @@ interface CardTreinoProps {
 
 export const CardTreino = ({treino}: CardTreinoProps) => {
   return (
-    <div className="h-screen flex justify-center items-center bg-gray-100">
+    // <div className="h-screen flex justify-center items-center bg-gray-100">
       <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden p-6 flex flex-col items-center space-y-4 border-2 border-red-950 hover:border-red-950 transition">
 
         <div className="bg-purple-100 p-4 rounded-full">
@@ -34,7 +34,7 @@ export const CardTreino = ({treino}: CardTreinoProps) => {
           Iniciar Treino
         </button>
       </div>
-    </div>
+    // </div> *
   );
 };
 
