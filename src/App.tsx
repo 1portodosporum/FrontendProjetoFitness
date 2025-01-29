@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Cadastro from './pages/cadastro/Cadastro';
 import Login from './pages/login/Login';
+
 import { AuthProvider } from './contexts/AuthContext';
 import ListarAluno from './components/alunos/listaralunos/ListarAluno.';
 import ListarTreino from './components/treinos/listartreinos/ListarTreinos';

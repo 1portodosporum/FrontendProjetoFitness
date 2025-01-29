@@ -47,3 +47,4 @@ export const CardAluno = ({ aluno }: CardAlunoProps) => {
     // </div>
   );
 };
+
