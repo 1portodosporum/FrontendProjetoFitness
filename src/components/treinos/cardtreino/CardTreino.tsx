@@ -1,6 +1,11 @@
 import { Dumbbell, Clock, Flame } from "lucide-react";
+import Treino from "../../../models/Treino";
 
-export const CardTreino = () => {
+interface CardTreinoProps {
+  treino: Treino;
+}
+
+export const CardTreino = ({treino}: CardTreinoProps) => {
   return (
     <div className="h-screen flex justify-center items-center bg-gray-100">
       <div className="max-w-sm w-full bg-white shadow-lg rounded-lg overflow-hidden p-6 flex flex-col items-center space-y-4 border-2 border-red-950 hover:border-red-950 transition">
@@ -10,17 +15,17 @@ export const CardTreino = () => {
         </div>
 
         <div className="text-center space-y-2">
-          <h2 className="text-xl font-semibold text-gray-800">Treino de Força</h2>
+          <h2 className="text-xl font-semibold text-gray-800">{treino.tipo}</h2>
           <p className="text-gray-600 text-sm">Foco no desenvolvimento muscular</p>
 
           <div className="flex justify-center space-x-4 text-gray-600">
             <div className="flex items-center space-x-1">
               <Clock className="w-5 h-5 text-red-950" />
-              <p className="text-sm font-medium">Duração: <span className="font-semibold">45 min</span></p>
+              <p className="text-sm font-medium">Duração: <span className="font-semibold">{treino.periodo}</span></p>
             </div>
             <div className="flex items-center space-x-1">
               <Flame className="w-5 h-5 text-red-500" />
-              <p className="text-sm font-medium">Intensidade: <span className="font-semibold">Alta</span></p>
+              <p className="text-sm font-medium">Intensidade: <span className="font-semibold">{treino.nivel}</span></p>
             </div>
           </div>
         </div>

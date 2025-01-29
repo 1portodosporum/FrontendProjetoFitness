@@ -1,6 +1,11 @@
 import { Dumbbell, Ruler, Weight } from "lucide-react";
+import Aluno from "../../../models/Alunos";
 
-export const CardAluno = () => {
+interface CardAlunoProps {
+  aluno: Aluno;
+}
+
+export const CardAluno = ({ aluno }: CardAlunoProps) => {
   return (
     <div className="h-screen flex justify-center items-center bg-gray-100">
       <div className="max-w-xs w-full bg-white shadow-md rounded-lg overflow-hidden p-5 flex flex-col items-center space-y-4 border border-gray-200">
@@ -11,26 +16,26 @@ export const CardAluno = () => {
         />
 
         <div className="text-center space-y-2">
-          <h2 className="text-lg font-semibold text-gray-800">Sansão Vieira</h2>
+          <h2 className="text-lg font-semibold text-gray-800">{ aluno.nome }</h2>
 
           <div className="flex items-center space-x-2 text-gray-600">
             <Weight className="w-4 h-4 text-red-950" />
             <p className="text-sm font-medium">
-              Peso: <span className="font-semibold">66.8kg</span>
+              Peso: <span className="font-semibold"> { aluno.peso }</span>
             </p>
           </div>
 
           <div className="flex items-center space-x-2 text-gray-600">
             <Ruler className="w-4 h-4 text-red-950" />
             <p className="text-sm font-medium">
-              Altura: <span className="font-semibold">1.80m</span>
+              Altura: <span className="font-semibold">{ aluno.altura }</span>
             </p>
           </div>
 
           <div className="flex items-center space-x-2 text-gray-600">
             <Dumbbell className="w-4 h-4 text-red-950" />
             <p className="text-sm font-medium">
-              Treino: <span className="font-semibold">Perna</span>
+              Treino: <span className="font-semibold">{ aluno.treino?.tipo}</span>
             </p>
           </div>
         </div>

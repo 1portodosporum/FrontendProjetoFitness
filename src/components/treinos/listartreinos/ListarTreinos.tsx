@@ -1,19 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
+import Treino from "../../../models/Treino";
+import { AuthContext } from "../../../contexts/AuthContext";
+import TreinoServices from "../../../services/TreinoServices";
+import { CardTreino } from "../cardtreino/CardTreino";
 
 function ListarTreino() {
 
     const navigate = useNavigate();
+    const treinoServices = new TreinoServices()
 
-   {/* const [treinos, setTreinos] = useState<Treino[]>([])*/}
+    const [treinos, setTreinos] = useState<Treino[]>([])
 
-     {/*const { usuario, handleLogout } = useContext(AuthContext)
-    const token = usuario.token*/}
+     const { usuario, handleLogout } = useContext(AuthContext)
+    const token = usuario.token
 
-    {/*async function buscarTreinos() {
+    async function buscarTreinos() {
         try {
-            await buscar('/treinos', setTreinos, {
+            await treinoServices.buscarTreinos( setTreinos, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -22,9 +27,9 @@ function ListarTreino() {
             }
         }
 
-    }*/}
+    }
 
-    {/*useEffect(() => {
+    useEffect(() => {
         if (token === '') {
             alert('Você precisa estar logado!')
             navigate('/')
@@ -33,11 +38,11 @@ function ListarTreino() {
 
     useEffect(() => {
         buscarTreinos()
-    }, [treinos.length])*/}
+    }, [treinos.length])
 
     return (
         <>
-            {/*{treinos.length === 0 && (
+            {treinos.length === 0 && (
                 <TailSpin
                     visible={true}
                     height="80"
@@ -58,7 +63,7 @@ function ListarTreino() {
                         ))}
                     </div>
                 </div>
-            </div>*/}
+            </div>
 
         </>
     )

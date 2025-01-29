@@ -1,19 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
+import Aluno from "../../../models/Alunos";
+import AlunoServices from "../../../services/AlunoServices";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { CardAluno } from "../cardaluno/CardAluno";
 
 function ListarAluno() {
 
+    const alunoServices = new AlunoServices()
     const navigate = useNavigate();
 
-    {/*const [alunos, setAlunos] = useState<Aluno[]>([])*/}
+    const [alunos, setAlunos] = useState<Aluno[]>([])
 
-    {/*const { usuario, handleLogout } = useContext(AuthContext)
-    const token = usuario.token*/}
+    const { usuario, handleLogout } = useContext(AuthContext)
+    const token = usuario.token
 
-    {/*async function buscarAlunos() {
+    async function buscarAlunos() {
         try {
-            await buscar('/alunos', setAlunos, {
+            await alunoServices.buscarAlunos( setAlunos, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -21,9 +26,9 @@ function ListarAluno() {
                 handleLogout()
             }
         }
-    }*/}
+    }
 
-    {/*useEffect(() => {
+    useEffect(() => {
         if (token === '') {
             alert('Você precisa estar logado!')
             navigate('/')
@@ -32,11 +37,11 @@ function ListarAluno() {
 
     useEffect(() => {
         buscarAlunos()
-    }, [alunos.length])*/}
+    }, [alunos.length])
 
     return (
         <>
-            {/*{alunos.length === 0 && (
+            {alunos.length === 0 && (
                 <TailSpin
                     visible={true}
                     height="80"
@@ -47,14 +52,14 @@ function ListarAluno() {
                     wrapperStyle={{}}
                     wrapperClass=""
                 />
-            )}*/}
+            )}
 
             <div className=' bg-gradient-to-br from-black to-red-950 container mx-auto my-4 
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
             >
-                {/*{alunos.map((aluno) => (
+                {alunos.map((aluno) => (
                     <CardAluno key={aluno.id} aluno={aluno} />
-                ))}*/}
+                ))}
 
             </div>
         </>
