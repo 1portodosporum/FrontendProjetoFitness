@@ -34,13 +34,20 @@ function Login() {
 
   return (
     <>
+
+    
       <div className="min-h-screen bg-gradient-to-br from-gray-950 to-red-950 flex items-center justify-center p-4">
         <div className="bg-white w-full max-w-md rounded-2xl shadow-xl p-8">
+        <div className='flex flex-row justify-center'>
+        <h1 className="text-7xl md:text-7xl font-bold mb-6">
+        GEN<span className="text-red-900" >ƒ</span>IT </h1>
+        </div>
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4"></div>
             <h2 className="text-3xl font-bold text-gray-800">Bem-vindo</h2>
             <p className="text-gray-600 mt-2">Faça login para continuar</p>
           </div>
+
 
           <form className="space-y-6" onSubmit={login}>
             <div className="space-y-2">
