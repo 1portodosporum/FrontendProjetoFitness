@@ -16,18 +16,24 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/login" element={<Login />} />
-          <Route path='/listaralunos' element={<ListarAluno />} />
-          <Route path='/listartreinos' element={<ListarTreino />} />
-          <Route path='/formaluno' element={<FormAluno />} />
-          <Route path='/formtreino' element={<FormTreino />} />
-        </Routes>
-        <Footer />
+        <header className='position-sticky top-0 z-50'>
+          <Navbar />
+        </header>
+        <main className='h-full overflow-y-auto'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/login" element={<Login />} />
+            <Route path='/listaralunos' element={<ListarAluno />} />
+            <Route path='/listartreinos' element={<ListarTreino />} />
+            <Route path='/formaluno' element={<FormAluno />} />
+            <Route path='/formtreino' element={<FormTreino />} />
+          </Routes>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </BrowserRouter>
     </AuthProvider>
   );

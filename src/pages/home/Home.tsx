@@ -1,19 +1,10 @@
 import { ArrowRight } from 'lucide-react';
-import backimage from './../../assets/background.jpg';
 import { Link } from 'react-router';
-import Navbar from '../../components/navbar/Navbar';
+import './Home.css';
 
 export default function Home() {
   return (
-    <div>
-     <Navbar />
-      <header
-        className=" relative h-screen flex items-center justify-center"
-        style={{
-          backgroundImage: `url(${backimage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'top',
-        }}>
+      <section className=" relative h-screen flex items-center justify-center"> 
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative text-center text-white px-4">
@@ -26,7 +17,6 @@ export default function Home() {
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
         </div>
-      </header>
-    </div>
+      </section>  
   );
 }
