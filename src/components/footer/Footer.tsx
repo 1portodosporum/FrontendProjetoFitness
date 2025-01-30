@@ -31,7 +31,7 @@ export default function Footer() {
                     <a href="#" className="text-gray-400 duration-700 hover:text-red-900">
                       <Link to="/listartreinos">Contato</Link>
                       <Link to="/formaluno">cadastrar aluno</Link>
-                      <Link to="/listartreinos">Contato</Link>
+                      <Link to="/formtreino">treino</Link>
                     </a>
                   </li>
                 </ul>
