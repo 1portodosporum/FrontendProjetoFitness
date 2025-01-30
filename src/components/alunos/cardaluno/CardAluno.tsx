@@ -62,14 +62,10 @@ export const CardAluno = ({ aluno }: CardAlunoProps) => {
       </div>
 
       <div className="flex flex-row space-x-4">
-
-          {/* <Link to={`/formaluno/${aluno.aluno.id}`} > */}
             <button onClick={() => navigator(`/formaluno/${aluno.aluno.id}`)}
              className="p-2 text-black hover:bg-blue-50 rounded-full transition-colors">
               <Pencil className="h-5 w-5" />
-            </button>
-          {/* </Link> */}
-        
+            </button>  
         <button
         onClick={() => removerAluno(aluno.aluno.id.toString())}
           className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors"
