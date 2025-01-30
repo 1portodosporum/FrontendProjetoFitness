@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 import UsuarioLogin from "../models/UsuarioLogin"
 import UsuarioServices  from "../services/UsuarioServices"
 
@@ -18,18 +18,30 @@ export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
 
-    const [usuario, setUsuario] = useState<UsuarioLogin>({
-        id: 0,
-        nome: "",
-        usuario: "",
-        senha: "",
-        foto: "",
-        token: ""
-    })
+    const [usuario, setUsuario] = useState<UsuarioLogin>(() => {
+        const usuarioSalvo = localStorage.getItem("usuario");
+        
+        return usuarioSalvo
+          ? JSON.parse(usuarioSalvo)
+          : {
+            id: 0,
+            nome: "",
+            usuario: "",
+            senha: "",
+            foto: "",
+            token: ""
+            };
+        });
 
-    const usuarioServices = new UsuarioServices()
+    const usuarioServices = new UsuarioServices();
 
     const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        if(usuario.token){
+            localStorage.setItem("usuario", JSON.stringify(usuario));
+        }
+    })
 
     async function handleLogin(usuarioLogin: UsuarioLogin) {
         setIsLoading(true)
@@ -51,6 +63,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             foto: "",
             token: ""
         })
+        localStorage.removeItem("usuario")
     }
 
     return (

@@ -19,11 +19,6 @@ function Cadastro() {
     senha: ''
   });
 
-  // useEffect(() => {
-  //     if (usuario.id !== 0) {
-  //         retornar();
-  //     }
-  // }, [usuario]);
 
   const retornar = () => navigate('/login');
 
