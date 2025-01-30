@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router';
 import UsuarioServices from '../../services/UsuarioServices';
 import { ChangeEvent, useState } from 'react';
+import Usuario from '../../models/Usuario';
 
 function Cadastro() {
 
@@ -12,7 +13,7 @@ function Cadastro() {
 
   const [confirmarSenha, setConfirmarSenha] = useState<string>('');
 
-  const [usuario, setUsuario] = useState({
+  const [usuario, setUsuario] = useState<Usuario>({
     nome: '',
     usuario: '',
     foto: '',
