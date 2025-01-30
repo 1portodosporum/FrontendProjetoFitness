@@ -7,7 +7,7 @@ export default interface Aluno {
     idade: number;
     altura: number;
     peso: number;
-    foto: string;
+    foto?: string;
     sexo: string;
     treino?: Treino;
     usuario?: Usuario;
