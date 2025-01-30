@@ -37,7 +37,7 @@ function FormAluno() {
 
   const buscarTreinoPorId = async(id: string) => {
     try {
-      await treinoServices.buscarTreinoPorId(id, setTreinos, { headers: { Authorization: token } });
+      await treinoServices.buscarTreinoPorId(id, setTreino, { headers: { Authorization: token } });
     }catch (error: any){
       if(error.toString().includes('403')){
         handleLogout();
@@ -124,6 +124,7 @@ function FormAluno() {
     }
     setIsLoading(false);
     retornar();
+
   }
 
   return (
