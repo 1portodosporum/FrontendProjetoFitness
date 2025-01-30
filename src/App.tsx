@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Cadastro from './pages/cadastro/Cadastro';
 import Login from './pages/login/Login';
-
+import Sobre from './pages/sobre/Sobre';
 import { AuthProvider } from './contexts/AuthContext';
 import ListarAluno from './components/alunos/listaralunos/ListarAluno.';
 import ListarTreino from './components/treinos/listartreinos/ListarTreinos';
@@ -22,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/listaralunos' element={<ListarAluno />} />
           <Route path='/listartreinos' element={<ListarTreino />} />
+          <Route path="/sobre" element={<Sobre />} />
 
         </Routes>
         <Footer />
