@@ -1,4 +1,4 @@
-import { Dumbbell, Link, Pencil, Ruler, Trash2, Weight } from "lucide-react";
+import { Dumbbell, Link, Pencil, Ruler, Scale, SquareActivity, Trash2, Weight } from "lucide-react";
 import Imc from "../../../models/Imc";
 import AlunoServices from "../../../services/AlunoServices";
 import { useContext } from "react";
@@ -57,6 +57,18 @@ export const CardAluno = ({ aluno }: CardAlunoProps) => {
           <Dumbbell className="w-4 h-4 text-red-950" />
           <p className="text-sm font-medium">
             Treino: <span className="font-semibold">{aluno.aluno.treino?.tipo}</span>
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-gray-600">
+          <Scale className="w-4 h-4 text-red-950" />
+          <p className="text-sm font-medium">
+            IMC: <span className="font-semibold">{aluno.imc}</span>
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-gray-600">
+          <SquareActivity className="w-4 h-4 text-red-950" />
+          <p className="text-sm font-medium">
+            Status: <span className="font-semibold">{aluno.status}</span>
           </p>
         </div>
       </div>
