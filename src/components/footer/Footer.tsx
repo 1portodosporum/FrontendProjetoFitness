@@ -18,7 +18,7 @@ export default function Footer() {
               <div className="text-center">
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-400 hover:text-gray-800">
+                    <a href="#" className="text-gray-400 duration-700 hover:text-red-900">
                       <Link to="/listaralunos">Sobre nós</Link>
                     </a>
                   </li>
@@ -28,7 +28,7 @@ export default function Footer() {
               <div className="text-center">
                 <ul>
                   <li>
-                    <a href="#" className="text-gray-400 hover:text-gray-800">
+                    <a href="#" className="text-gray-400 duration-700 hover:text-red-900">
                       <Link to="/listartreinos">Contato</Link>
                       <Link to="/formaluno">cadastrar aluno</Link>
                       <Link to="/listartreinos">Contato</Link>
@@ -42,25 +42,25 @@ export default function Footer() {
               <a
                 href="https://github.com/1portodosporum"
                 target="_blank"
-                className="text-gray-500 hover:text-gray-700">
+                className="text-gray-500 duration-700 hover:text-red-900 duration-600">
                 <FacebookLogo size={24} weight="fill" />
               </a>
               <a
                 href="https://github.com/1portodosporum"
                 target="_blank"
-                className="text-gray-500 hover:text-gray-700">
+                className="text-gray-500 duration-700 hover:text-red-900 duration-600">
                 <InstagramLogo size={24} weight="fill" />
               </a>
               <a
                 href="https://github.com/1portodosporum"
                 target="_blank"
-                className="text-gray-500 hover:text-gray-700">
+                className="text-gray-500 duration-700 hover:text-red-900 duration-600">
                 <YoutubeLogo size={24} weight="fill" />
               </a>
               <a
                 href="https://github.com/1portodosporum"
                 target="_blank"
-                className="text-gray-500 hover:text-gray-700">
+                className="text-gray-500 duration-700 hover:text-red-900">
                 <LinkedinLogo size={24} weight="fill" />
               </a>
             </div>

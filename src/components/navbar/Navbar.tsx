@@ -1,7 +1,12 @@
 import { LogIn } from 'lucide-react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 
 export default function Navbar() {
+
+  const location = useLocation();
+
+  if(location.pathname === "/login", "cadastro") return null;
+
   return (
     <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-end items-center">
       <div>

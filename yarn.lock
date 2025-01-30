@@ -1269,7 +1269,7 @@ fraction.js@^4.3.7:
   dependencies:
     "@phosphor-icons/react" "^2.1.7"
     axios "^1.7.9"
-    frontendprojetofitness "file:../../../AppData/Local/Yarn/Cache/v6/npm-frontendprojetofitness-0.0.0-059c1832-7728-4b4b-87d4-b389b48dea50-1738236601915/node_modules/frontendprojetofitness"
+    frontendprojetofitness "file:../../../../../AppData/Local/Yarn/Cache/v6/npm-frontendprojetofitness-0.0.0-f414019f-0b25-4d52-a576-45703bef5c4b-1738239452613/node_modules/frontendprojetofitness"
     lucide-react "^0.474.0"
     react "^18.3.1"
     react-dom "^18.3.1"
