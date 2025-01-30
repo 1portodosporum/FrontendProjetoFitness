@@ -161,7 +161,7 @@ function Cadastro() {
             <button
               type="submit"
               className="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-red-900 focus:ring-4 focus:ring-red-950 font-medium transition-colors">
-              Entrar
+              Cadastrar
             </button>
           </form>
 
