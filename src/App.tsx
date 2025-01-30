@@ -29,6 +29,7 @@ function App() {
             <Route path='/listartreinos' element={<ListarTreino />} />
             <Route path='/formaluno' element={<FormAluno />} />
             <Route path='/formtreino' element={<FormTreino />} />
+            <Route path='/formaluno/:id' element={<FormAluno />} />
           </Routes>
         </main>
         <footer>
