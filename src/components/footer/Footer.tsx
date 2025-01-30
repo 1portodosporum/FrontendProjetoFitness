@@ -30,6 +30,8 @@ export default function Footer() {
                   <li>
                     <a href="#" className="text-gray-400 duration-700 hover:text-red-900">
                       <Link to="/listartreinos">Contato</Link>
+                      <Link to="/formaluno">cadastrar aluno</Link>
+                      <Link to="/listartreinos">Contato</Link>
                     </a>
                   </li>
                 </ul>
