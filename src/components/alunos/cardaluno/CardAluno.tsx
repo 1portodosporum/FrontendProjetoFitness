@@ -1,8 +1,9 @@
 import { Dumbbell, Ruler, Weight } from "lucide-react";
 import Aluno from "../../../models/Alunos";
+import Imc from "../../../models/Imc";
 
 interface CardAlunoProps {
-  aluno: Aluno;
+  aluno: Imc;
 }
 
 export const CardAluno = ({ aluno }: CardAlunoProps) => {
@@ -11,31 +12,31 @@ export const CardAluno = ({ aluno }: CardAlunoProps) => {
       <div className="max-w-xs w-full bg-white shadow-md rounded-lg overflow-hidden p-5 flex flex-col items-center space-y-4 border border-gray-200">
         <img
           className="w-24 h-24 rounded-full border-4 border-red-950 object-cover"
-          src="https://ik.imagekit.io/ios4z1d4u/default-image.jpg?updatedAt=1736228903080"
+          src={aluno.aluno.foto}
           alt="Aluno"
         />
 
         <div className="text-center space-y-2">
-          <h2 className="text-lg font-semibold text-gray-800">{ aluno.nome }</h2>
+          <h2 className="text-lg font-semibold text-gray-800">{ aluno.aluno.nome }</h2>
 
           <div className="flex items-center space-x-2 text-gray-600">
             <Weight className="w-4 h-4 text-red-950" />
             <p className="text-sm font-medium">
-              Peso: <span className="font-semibold"> { aluno.peso }</span>
+              Peso: <span className="font-semibold"> { aluno.aluno.peso }</span>
             </p>
           </div>
 
           <div className="flex items-center space-x-2 text-gray-600">
             <Ruler className="w-4 h-4 text-red-950" />
             <p className="text-sm font-medium">
-              Altura: <span className="font-semibold">{ aluno.altura }</span>
+              Altura: <span className="font-semibold">{ aluno.aluno.altura  }</span>
             </p>
           </div>
 
           <div className="flex items-center space-x-2 text-gray-600">
             <Dumbbell className="w-4 h-4 text-red-950" />
             <p className="text-sm font-medium">
-              Treino: <span className="font-semibold">{ aluno.treino?.tipo}</span>
+              Treino: <span className="font-semibold">{ aluno.aluno.treino?.tipo}</span>
             </p>
           </div>
         </div>

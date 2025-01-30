@@ -5,13 +5,14 @@ import Aluno from "../../../models/Alunos";
 import AlunoServices from "../../../services/AlunoServices";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { CardAluno } from "../cardaluno/CardAluno";
+import Imc from "../../../models/Imc";
 
 function ListarAluno() {
 
     const alunoServices = new AlunoServices()
     const navigate = useNavigate();
 
-    const [alunos, setAlunos] = useState<Aluno[]>([])
+    const [alunos, setAlunos] = useState<Imc[]>([])
 
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
@@ -58,7 +59,7 @@ function ListarAluno() {
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
             >
                 {alunos.map((aluno) => (
-                    <CardAluno key={aluno.id} aluno={aluno} />
+                    <CardAluno key={aluno.aluno.id} aluno={aluno} />
                 ))}
 
             </div>
