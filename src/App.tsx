@@ -9,6 +9,8 @@ import Login from './pages/login/Login';
 import { AuthProvider } from './contexts/AuthContext';
 import ListarAluno from './components/alunos/listaralunos/ListarAluno.';
 import ListarTreino from './components/treinos/listartreinos/ListarTreinos';
+import FormAluno from './components/alunos/formaluno/FormAluno';
+import FormTreino from './components/treinos/formtreino/FormTreino';
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/listaralunos' element={<ListarAluno />} />
           <Route path='/listartreinos' element={<ListarTreino />} />
-
+          <Route path='/formaluno' element={<FormAluno />} />
+          <Route path='/formtreino' element={<FormTreino />} />
         </Routes>
         <Footer />
       </BrowserRouter>

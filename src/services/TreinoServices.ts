@@ -8,6 +8,11 @@ class TreinoService{
         setDados(resposta.data);
     }
 
+    buscarTreinoPorId = async(id: string, setDados: Function, header: Object) => {
+        const resposta = await baseApi.get(`/treinos/${id}`, header);
+        setDados(resposta.data);
+    }
+
     cadastrarTreino = async(treino: Treino, setDados: Function , header: Object) => {
         const resposta = await baseApi.post("/treinos", treino, header);
         setDados(resposta.data);
