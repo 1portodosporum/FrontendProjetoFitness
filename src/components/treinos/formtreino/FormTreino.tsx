@@ -5,6 +5,7 @@ import Treino from '../../../models/Treino';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { RotatingLines } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function FormTreino() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function FormTreino() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado para acessar essa página');
+      ToastAlerta('Você precisa estar logado para acessar essa página', 'info');
       navigate('/');
     }
   }, [token]);
@@ -59,23 +60,23 @@ function FormTreino() {
     if (id !== undefined) {
       try {
         await treinoServices.atualizarTreino(treino, setTreino, { headers: { Authorization: token } });
-        alert('Treino atualizado com sucesso!');
+        ToastAlerta('Treino atualizado com sucesso!', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao atualizar treino');
+          ToastAlerta('Erro ao atualizar treino', 'erro');
         }
       }
     } else {
       try {
         await treinoServices.cadastrarTreino(treino, setTreino, { headers: { Authorization: token } });
-        alert('Treino cadastrado com sucesso!');
+        ToastAlerta('Treino cadastrado com sucesso!', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao cadastrar treino');
+          ToastAlerta('Erro ao cadastrar treino', 'erro');
         }
       }
     }

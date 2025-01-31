@@ -7,6 +7,7 @@ import Treino from '../../../models/Treino';
 import Aluno from '../../../models/Alunos';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { RotatingLines } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function FormAluno() {
   const alunoServices = new AlunoServices();
@@ -56,7 +57,7 @@ function FormAluno() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado para acessar essa página');
+      ToastAlerta('Você precisa estar logado para acessar essa página', 'info');
       navigate('/login');
     }
   }, [token]);
@@ -95,23 +96,23 @@ function FormAluno() {
     if (id !== undefined) {
       try {
         await alunoServices.atualizarAluno(aluno, setAluno, { headers: { Authorization: token } });
-        alert('Aluno atualizado com sucesso');
+        ToastAlerta('Aluno atualizado com sucesso', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao atualizar o aluno');
+          ToastAlerta('Erro ao atualizar o aluno', 'erro');
         }
       }
     } else {
       try {
         await alunoServices.cadastrarAluno(aluno, setAluno, { headers: { Authorization: token } });
-        alert('Aluno cadastrado com sucesso');
+        ToastAlerta('Aluno cadastrado com sucesso', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           handleLogout();
         } else {
-          alert('Erro ao cadastrar o aluno');
+          ToastAlerta('Erro ao cadastrar o aluno', 'erro');
         }
       }
     }

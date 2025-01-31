@@ -6,6 +6,7 @@ import AlunoServices from '../../../services/AlunoServices';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { CardAluno } from '../cardaluno/CardAluno';
 import Imc from '../../../models/Imc';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function ListarAluno() {
   const alunoServices = new AlunoServices();
@@ -30,7 +31,7 @@ function ListarAluno() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado!');
+      ToastAlerta('Você precisa estar logado!', 'erro');
       navigate('/');
     }
   }, [token]);

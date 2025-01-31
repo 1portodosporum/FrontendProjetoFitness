@@ -5,6 +5,7 @@ import Treino from '../../../models/Treino';
 import { AuthContext } from '../../../contexts/AuthContext';
 import TreinoServices from '../../../services/TreinoServices';
 import { CardTreino } from '../cardtreino/CardTreino';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function ListarTreino() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ function ListarTreino() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado!');
+      ToastAlerta('Você precisa estar logado!', 'erro');
       navigate('/');
     }
   }, [token]);

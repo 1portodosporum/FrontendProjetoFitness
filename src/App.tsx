@@ -11,10 +11,12 @@ import ListarAluno from './components/alunos/listaralunos/ListarAluno.';
 import ListarTreino from './components/treinos/listartreinos/ListarTreinos';
 import FormAluno from './components/alunos/formaluno/FormAluno';
 import FormTreino from './components/treinos/formtreino/FormTreino';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer />
       <BrowserRouter>
         <header className='position-sticky top-0 z-50'>
           <Navbar />

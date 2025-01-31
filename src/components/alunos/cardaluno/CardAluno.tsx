@@ -4,6 +4,7 @@ import AlunoServices from "../../../services/AlunoServices";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 interface CardAlunoProps {
   aluno: Imc;
@@ -21,9 +22,9 @@ export const CardAluno = ({ aluno }: CardAlunoProps) => {
   const removerAluno = async(id: string) => {
     try {
       await alunoServices.deletarAluno(id,{ headers: { Authorization: token }});
-      alert('Aluno removido com sucesso!');
+      ToastAlerta('Aluno removido com sucesso!', 'sucesso');
     } catch (error) {
-      alert('Erro ao remover aluno!');
+      ToastAlerta('Erro ao remover aluno!', 'erro');
     }
   } 
 
